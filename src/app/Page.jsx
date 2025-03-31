@@ -70,7 +70,7 @@ export default function Home() {
       {showConfetti && <Confetti />}
       <div className="doodle-border"></div>
       <div className="content">
-        <h1 className="birthday-title">Happy Birthday!</h1>
+        <h1 className="birthday-title">Happy Birthday, Naina!</h1>
         <div className="balloon-container">
           {[...Array(5)].map((_, i) => (
             <div key={i} className={`balloon balloon-${i + 1}`}></div>
