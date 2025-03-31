@@ -1,0 +1,357 @@
+.cubeWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 0 60px;
+}
+
+.scene {
+  width: 350px;
+  height: 350px;
+  perspective: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.cubeFace {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(13, 13, 13, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  backface-visibility: hidden;
+  overflow: hidden;
+  cursor: pointer;
+  background: #fff;
+  transition: transform 0.3s ease, z-index 0.3s ease;
+  z-index: 1;
+}
+
+.cubeFace:hover {
+  transform: scale(1.02);
+  z-index: 2; 
+}
+
+.cubeFaceFront {
+  transform: translateZ(175px);
+  z-index: 1;
+}
+
+.cubeFaceBack {
+  transform: rotateY(180deg) translateZ(175px);
+  z-index: 1;
+}
+
+.cubeFaceRight {
+  transform: rotateY(90deg) translateZ(175px);
+  z-index: 1;
+}
+
+.cubeFaceLeft {
+  transform: rotateY(-90deg) translateZ(175px);
+  z-index: 1;
+}
+
+.cubeFaceTop {
+  transform: rotateX(90deg) translateZ(175px);
+  z-index: 1;
+}
+
+.cubeFaceBottom {
+  transform: rotateX(-90deg) translateZ(175px);
+  z-index: 1;
+}
+
+
+.bookCover {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.bookCover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.bookInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(70%);
+  transition: transform 0.3s ease;
+  border-top: 3px solid #ff6b6b;
+}
+
+.bookCover:hover .bookInfo {
+  transform: translateY(0);
+}
+
+.bookInfo h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.volume {
+  font-size: 0.9rem;
+  color: #ff6b6b;
+  margin: 0 0 0.3rem;
+  font-weight: 600;
+}
+
+.author {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0 0 0.8rem;
+  font-style: italic;
+}
+
+.viewButton {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: 600;
+}
+
+.viewButton:hover {
+  background: #ff4757;
+}
+
+.giftMessage {
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.giftMessage h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.giftMessage p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.giftIcon {
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+
+.giftBox {
+  width: 100%;
+  height: 100%;
+  background: #ff6b6b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.giftBoxTop {
+  width: 80%;
+  height: 80%;
+  background: #ff8c8c;
+  position: relative;
+  border: 5px solid #fff;
+}
+
+.giftBoxRibbon {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background: #fff;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.giftBoxRibbon::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 100%;
+  background: #fff;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.giftBoxBottom {
+  width: 100%;
+  height: 100%;
+  background: #ffd1d1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.giftBoxBottom p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.cubeControls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.5rem !important;
+}
+
+.cubeControls button {
+  background: #fff;
+  border: 2px solid #ff6b6b;
+  color: #ff6b6b;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.cubeControls button:hover,
+.cubeControls button.activeButton {
+  background: #ff6b6b;
+  color: #fff;
+}
+
+.navArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #ff6b6b;
+  color: #ff6b6b;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.navArrow:hover {
+  background: #ff6b6b;
+  color: white;
+}
+
+.leftArrow {
+  left: 0;
+}
+
+.rightArrow {
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  .scene {
+    width: 240px;
+    height: 240px;
+  }
+
+  .cubeFace {
+    width: 240px;
+    height: 240px;
+  }
+
+  .cubeFaceFront {
+    transform: translateZ(120px);
+  }
+
+  .cubeFaceBack {
+    transform: rotateY(180deg) translateZ(120px);
+  }
+
+  .cubeFaceRight {
+    transform: rotateY(90deg) translateZ(120px);
+  }
+
+  .cubeFaceLeft {
+    transform: rotateY(-90deg) translateZ(120px);
+  }
+
+  .cubeFaceTop {
+    transform: rotateX(90deg) translateZ(120px);
+  }
+
+  .cubeFaceBottom {
+    transform: rotateX(-90deg) translateZ(120px);
+  }
+
+  .bookInfo {
+    transform: translateY(75%);
+  }
+
+  .bookInfo h3 {
+    font-size: 1rem;
+  }
+
+  .volume,
+  .author {
+    font-size: 0.7rem;
+  }
+
+  .viewButton {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.7rem;
+  }
+
+  .cubeControls {
+    margin-top: 1rem;
+  }
+
+  .cubeControls button {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .navArrow {
+    width: 40px;
+    height: 40px;
+  }
+}

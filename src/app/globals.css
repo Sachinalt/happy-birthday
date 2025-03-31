@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background-color: #fef6e4;
+  color: #333;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+.birthday-container {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.birthday-title {
+  font-size: 4rem;
+  text-align: center;
+  margin: 2rem 0;
+  color: #ff6b6b;
+  text-shadow: 3px 3px 0 #ffd166;
+  position: relative;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.gift-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 3rem 0 0.5rem;
+  color: #333;
+}
+
+.gift-subtitle {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.book-cube-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 3rem;
+  position: relative;
+}
+
+.doodle-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 15px solid transparent;
+  border-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 C50,40 50,60 100,100 M100,0 C60,50 40,50 0,100 M0,50 C50,50 50,50 100,50 M50,0 C50,50 50,50 50,100' stroke='%23ff6b6b' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")
+    20 stretch;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.doodle-corner {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 5;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='150' height='150' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10,10 C30,30 50,10 70,30 C90,50 70,70 90,90' stroke='%23ff6b6b' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='150' height='150' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M140,10 C120,30 100,10 80,30 C60,50 80,70 60,90' stroke='%23ff6b6b' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='150' height='150' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10,140 C30,120 50,140 70,120 C90,100 70,80 90,60' stroke='%23ff6b6b' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='150' height='150' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M140,140 C120,120 100,140 80,120 C60,100 80,80 60,60' stroke='%23ff6b6b' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.balloon-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.balloon {
+  position: absolute;
+  width: 60px;
+  height: 70px;
+  background-color: #ff6b6b;
+  border-radius: 50%;
+  animation: float 15s infinite;
+  opacity: 0.8;
+}
+
+.balloon::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  background-color: #ff6b6b;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0 0 5px 5px;
+}
+
+.balloon::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 80px;
+  background-color: #999;
+  bottom: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.balloon-1 {
+  left: 10%;
+  top: -100px;
+  background-color: #ff6b6b;
+  animation-delay: 0s;
+}
+
+.balloon-2 {
+  left: 30%;
+  top: -100px;
+  background-color: #ffd166;
+  animation-delay: 2s;
+}
+
+.balloon-3 {
+  left: 50%;
+  top: -100px;
+  background-color: #06d6a0;
+  animation-delay: 4s;
+}
+
+.balloon-4 {
+  left: 70%;
+  top: -100px;
+  background-color: #118ab2;
+  animation-delay: 6s;
+}
+
+.balloon-5 {
+  left: 90%;
+  top: -100px;
+  background-color: #9b5de5;
+  animation-delay: 8s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(calc(100vh - 200px)) rotate(10deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .birthday-title {
+    font-size: 3rem;
+  }
+
+  .gift-title {
+    font-size: 2rem;
+  }
+
+  .birthday-container {
+    padding: 1rem;
+  }
+}
+
